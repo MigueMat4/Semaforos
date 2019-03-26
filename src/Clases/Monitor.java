@@ -61,7 +61,7 @@ public class Monitor {
          */
         public synchronized void insertar(int val){
             if (cuenta==N)
-                ir_a_estado_inactivo(); // si el búfer está lleno, pasa al estado inactivo
+                ir_a_estado_inactivo(); // si el búfer está lleno, productor pasa al estado inactivo
             bufer[sup]=val; // inserta un elemento en el búfer
             sup=(sup+1)%N; // ranura en la que se va a colocar el siguiente elemento
             cuenta=cuenta+1; // ahora hay un elemento más en el búfer
@@ -73,7 +73,7 @@ public class Monitor {
         public synchronized int eliminar(){
             int val;
             if (cuenta==0)
-                ir_a_estado_inactivo(); // si el búfer está vacío, pasa al estado inactivo
+                ir_a_estado_inactivo(); // si el búfer está vacío, consumidor pasa al estado inactivo
             val=bufer[inf]; // obtiene un elemento del búfer
             inf = (inf + 1) %N; // ranura en la que se va a colocar el siguiente elemento
             cuenta=cuenta-1; // un elemento menos en el búfer
