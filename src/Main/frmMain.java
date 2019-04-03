@@ -5,6 +5,7 @@
  * garantizar la exclusión mutua.
  */
 package Main;
+import com.sun.awt.AWTUtilities;
 import java.util.concurrent.Semaphore; // Librería para semáforos en java
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -29,6 +30,8 @@ public class frmMain extends javax.swing.JFrame {
      */
     public frmMain() {
         initComponents();
+        this.setLocationRelativeTo(null); //para centrar el frame
+        AWTUtilities.setWindowOpaque(this,false); //frame transparente
     }
 
     /**
@@ -40,140 +43,163 @@ public class frmMain extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         lblRegionCritica = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        btnminimizar = new javax.swing.JButton();
+        btncerrar = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        btnProductor = new javax.swing.JButton();
         lblEstadoProductor = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        lblEstadoConsumidor = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         btnIniciar = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         lblEstadoSemaforo = new javax.swing.JLabel();
-        btnProductor = new javax.swing.JButton();
         btnConsumidor = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        lblEstadoConsumidor = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Monospaced", 0, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Búfer de datos:");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 50, -1, -1));
 
-        lblRegionCritica.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        lblRegionCritica.setFont(new java.awt.Font("Tahoma", 0, 68)); // NOI18N
+        lblRegionCritica.setForeground(new java.awt.Color(255, 255, 255));
         lblRegionCritica.setText("[0] [0] [0] [0] [0]");
+        jPanel2.add(lblRegionCritica, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 150, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel3.setText("Productor");
-
-        lblEstadoProductor.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lblEstadoProductor.setText("<Estado>");
-
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel5.setText("Consumidor");
-
-        lblEstadoConsumidor.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lblEstadoConsumidor.setText("<Estado>");
-
-        btnIniciar.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        btnIniciar.setText("Iniciar");
-        btnIniciar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnIniciarActionPerformed(evt);
+        btnminimizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/icons8_Scroll_Down_35px.png"))); // NOI18N
+        btnminimizar.setToolTipText("Minimizar");
+        btnminimizar.setBorder(null);
+        btnminimizar.setBorderPainted(false);
+        btnminimizar.setContentAreaFilled(false);
+        btnminimizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnminimizar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/icons8_Scroll_Down_40px.png"))); // NOI18N
+        btnminimizar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnminimizarMouseClicked(evt);
             }
         });
+        jPanel2.add(btnminimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 0, 50, 50));
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel6.setText("Semáforo");
+        btncerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/icons8_Cancel_35px_1.png"))); // NOI18N
+        btncerrar.setToolTipText("Cerrar");
+        btncerrar.setBorder(null);
+        btncerrar.setBorderPainted(false);
+        btncerrar.setContentAreaFilled(false);
+        btncerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btncerrar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/icons8_Cancel_40px.png"))); // NOI18N
+        btncerrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btncerrarMouseClicked(evt);
+            }
+        });
+        jPanel2.add(btncerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 0, 50, 50));
 
-        lblEstadoSemaforo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lblEstadoSemaforo.setText("<Estado>");
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/f1.jpg"))); // NOI18N
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 360));
 
-        btnProductor.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 900, 360));
+
+        jPanel1.setBackground(new java.awt.Color(61, 61, 61));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnProductor.setFont(new java.awt.Font("Monospaced", 1, 30)); // NOI18N
+        btnProductor.setForeground(new java.awt.Color(255, 255, 255));
+        btnProductor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/icons8_Circled_Play_35px.png"))); // NOI18N
         btnProductor.setText("Iniciar");
+        btnProductor.setActionCommand("Iniciar                         ");
+        btnProductor.setAlignmentY(0.0F);
+        btnProductor.setBorder(null);
+        btnProductor.setBorderPainted(false);
+        btnProductor.setContentAreaFilled(false);
+        btnProductor.setMargin(new java.awt.Insets(25, 5, 15, 5));
+        btnProductor.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/icons8_Circled_Play_40px.png"))); // NOI18N
+        btnProductor.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         btnProductor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnProductorActionPerformed(evt);
             }
         });
+        jPanel1.add(btnProductor, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 200, 110));
 
-        btnConsumidor.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        lblEstadoProductor.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblEstadoProductor.setForeground(new java.awt.Color(255, 255, 255));
+        lblEstadoProductor.setText("<Estado>");
+        jPanel1.add(lblEstadoProductor, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 105, 70, -1));
+
+        jLabel3.setFont(new java.awt.Font("Roboto Thin", 0, 20)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Productor");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 75, -1, -1));
+
+        btnIniciar.setFont(new java.awt.Font("Monospaced", 1, 30)); // NOI18N
+        btnIniciar.setForeground(new java.awt.Color(255, 255, 255));
+        btnIniciar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/icons8_Circled_Play_35px.png"))); // NOI18N
+        btnIniciar.setText("Iniciar");
+        btnIniciar.setBorder(null);
+        btnIniciar.setBorderPainted(false);
+        btnIniciar.setContentAreaFilled(false);
+        btnIniciar.setMaximumSize(new java.awt.Dimension(127, 41));
+        btnIniciar.setMinimumSize(new java.awt.Dimension(127, 41));
+        btnIniciar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/icons8_Circled_Play_40px.png"))); // NOI18N
+        btnIniciar.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        btnIniciar.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        btnIniciar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIniciarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnIniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, 220, 110));
+
+        jLabel6.setFont(new java.awt.Font("Roboto Thin", 0, 20)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Semáforo");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(275, 75, -1, -1));
+
+        lblEstadoSemaforo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblEstadoSemaforo.setForeground(new java.awt.Color(255, 255, 255));
+        lblEstadoSemaforo.setText("<Estado>");
+        jPanel1.add(lblEstadoSemaforo, new org.netbeans.lib.awtextra.AbsoluteConstraints(285, 105, -1, -1));
+
+        btnConsumidor.setFont(new java.awt.Font("Monospaced", 1, 30)); // NOI18N
+        btnConsumidor.setForeground(new java.awt.Color(255, 255, 255));
+        btnConsumidor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/icons8_Circled_Play_35px.png"))); // NOI18N
         btnConsumidor.setText("Iniciar");
+        btnConsumidor.setBorder(null);
+        btnConsumidor.setBorderPainted(false);
+        btnConsumidor.setContentAreaFilled(false);
+        btnConsumidor.setMaximumSize(new java.awt.Dimension(127, 41));
+        btnConsumidor.setMinimumSize(new java.awt.Dimension(127, 41));
+        btnConsumidor.setPreferredSize(new java.awt.Dimension(127, 41));
+        btnConsumidor.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/icons8_Circled_Play_40px.png"))); // NOI18N
+        btnConsumidor.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        btnConsumidor.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         btnConsumidor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnConsumidorActionPerformed(evt);
             }
         });
+        jPanel1.add(btnConsumidor, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 30, 200, 110));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(41, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(lblEstadoProductor))
-                            .addComponent(jLabel3))
-                        .addGap(100, 100, 100)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(lblEstadoSemaforo))))
-                    .addComponent(jLabel1))
-                .addGap(252, 252, 252))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(btnProductor)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(lblEstadoConsumidor)
-                            .addGap(25, 25, 25)))
-                    .addComponent(btnConsumidor))
-                .addGap(61, 61, 61))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(216, 216, 216)
-                        .addComponent(btnIniciar))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(88, 88, 88)
-                        .addComponent(lblRegionCritica)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblRegionCritica)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
-                .addComponent(btnIniciar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnProductor)
-                    .addComponent(btnConsumidor))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblEstadoProductor))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblEstadoSemaforo))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblEstadoConsumidor)))
-                .addGap(68, 68, 68))
-        );
+        jLabel5.setFont(new java.awt.Font("Roboto Thin", 0, 20)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Consumidor");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(477, 75, -1, -1));
+
+        lblEstadoConsumidor.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblEstadoConsumidor.setForeground(new java.awt.Color(255, 255, 255));
+        lblEstadoConsumidor.setText("<Estado>");
+        jPanel1.add(lblEstadoConsumidor, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 105, -1, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, -20, 630, 520));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -207,6 +233,14 @@ public class frmMain extends javax.swing.JFrame {
         btnConsumidor.setText("Iniciado");
         btnConsumidor.setEnabled(false);
     }//GEN-LAST:event_btnConsumidorActionPerformed
+
+    private void btncerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btncerrarMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_btncerrarMouseClicked
+
+    private void btnminimizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnminimizarMouseClicked
+        this.setExtendedState(ICONIFIED); //funcion para minimizar
+    }//GEN-LAST:event_btnminimizarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -371,10 +405,15 @@ public class frmMain extends javax.swing.JFrame {
     private javax.swing.JButton btnConsumidor;
     private javax.swing.JButton btnIniciar;
     private javax.swing.JButton btnProductor;
+    private javax.swing.JButton btncerrar;
+    private javax.swing.JButton btnminimizar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lblEstadoConsumidor;
     private javax.swing.JLabel lblEstadoProductor;
     private javax.swing.JLabel lblEstadoSemaforo;
