@@ -5,7 +5,7 @@
  * garantizar la exclusión mutua.
  */
 package Main;
-import com.sun.awt.AWTUtilities;
+import java.awt.Color;
 import java.util.concurrent.Semaphore; // Librería para semáforos en java
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -29,9 +29,10 @@ public class frmMain extends javax.swing.JFrame {
      * Creates new form frmMain
      */
     public frmMain() {
+        this.setUndecorated(true); // evita excepción: frame is decorated
         initComponents();
-        this.setLocationRelativeTo(null); //para centrar el frame
-        AWTUtilities.setWindowOpaque(this,false); //frame transparente
+        this.setLocationRelativeTo(null); // para centrar el frame
+        this.setBackground(new Color(0,0,0,0)); // frame transparente
     }
 
     /**
